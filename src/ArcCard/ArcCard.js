@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './ArcCard.css';
 
 const ArcCard = ({ arc }) => {
-  console.log('Arc Image URL:', arc.Image); // Debugging line
   return (
     <div className="arc-card">
       <Link to={`/arcs/${arc.Arc.toLowerCase().replace(/ /g, '-')}`}>

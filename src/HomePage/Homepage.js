@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ArcCard from './ArcCard';
+import ArcCard from '../ArcCard/ArcCard';
 import "./Homepage.css"
 
 const HomePage = () => {

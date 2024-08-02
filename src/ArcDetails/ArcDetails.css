@@ -1,0 +1,27 @@
+.arc-details {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  
+  .arc-details-image {
+    width: 200px;
+    height: auto;
+    margin-right: 1rem;
+  }
+  
+  .arc-details-info {
+    max-width: 600px;
+  }
+  
+  .arc-details-info h2 {
+    margin-top: 0;
+  }
+  
+  .back-link {
+    display: block;
+    margin-top: 1rem;
+    color: #61dafb;
+    text-decoration: none;
+  }
+  
