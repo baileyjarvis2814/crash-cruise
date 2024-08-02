@@ -1,0 +1,27 @@
+.arc-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 1rem;
+    text-align: center;
+    transition: transform 0.2s;
+    width: 200px; /* Adjust as needed */
+  }
+  
+  .arc-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .arc-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Ensures the image is properly fitted within the dimensions */
+  }
+  
+  .arc-card h3 {
+    margin: 0.5rem 0;
+  }
+  
+.arc-card p {
+    margin: 0.2rem 0
+}

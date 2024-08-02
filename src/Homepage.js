@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import ArcCard from './ArcCard';
+import "./Homepage.css"
 
 const HomePage = () => {
   const [arcs, setArcs] = useState([]);
@@ -31,13 +33,11 @@ const HomePage = () => {
     <div>
       <h2>Welcome to One Piece Crash Cruise</h2>
       <p>Search for your favorite arcs and explore the adventures!</p>
-      <ul>
+      <div className="arc-card-container">
         {arcs.map(arc => (
-          <li key={arc.Arc}>
-            {arc.Arc}
-          </li>
+          <ArcCard key={arc.Arc} arc={arc} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
