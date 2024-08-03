@@ -1,11 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({ onSearch }) => {
+  const handleSearch = (event) => {
+    onSearch(event.target.value);
+  };
+
   return (
     <nav>
       <h1>One Piece Crash Cruise</h1>
-      <input type="text" placeholder="Search for an arc..." />
+      <input type="text" placeholder="Search for an arc..." onChange={handleSearch} />
     </nav>
   );
 };

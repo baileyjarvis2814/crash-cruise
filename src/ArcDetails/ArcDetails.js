@@ -7,6 +7,8 @@ const ArcDetails = () => {
   const [arc, setArc] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showImportance, setShowImportance] = useState(false);
+  const [showSpoiler, setShowSpoiler] = useState(false);
 
   useEffect(() => {
     fetch('/api/data')
@@ -36,17 +38,23 @@ const ArcDetails = () => {
   }
 
   return (
-    <div className="arc-details">
+    <div className="arc-details-container">
       <img src={arc.Image} alt={arc.Arc} className="arc-details-image" />
-      <div className="arc-details-info">
+      <div className="arc-details">
         <h2>{arc.Arc}</h2>
         <p><strong>Start on Chapter:</strong> {arc['Start onChapter']}</p>
         <p><strong>Total Chapters:</strong> {arc.TotalChapters}</p>
         <p><strong>Start on Episode:</strong> {arc['Start onEpisode']}</p>
         <p><strong>Total Episodes:</strong> {arc.TotalEpisodes}</p>
         <p><strong>Major Players:</strong> {arc['Major players']}</p>
-        <p><strong>Importance:</strong> {arc.Importance}</p>
-        <p><strong>Major Spoiler Moment:</strong> {arc['Major Spoiler Moment']}</p>
+        <button onClick={() => setShowImportance(!showImportance)}>
+          {showImportance ? 'Hide Importance' : 'Show Importance'}
+        </button>
+        {showImportance && <p><strong>Importance:</strong> {arc.Importance}</p>}
+        <button onClick={() => setShowSpoiler(!showSpoiler)}>
+          {showSpoiler ? 'Hide Major Spoiler Moment' : 'Show Major Spoiler Moment'}
+        </button>
+        {showSpoiler && <p><strong>Major Spoiler Moment:</strong> {arc['Major Spoiler Moment']}</p>}
       </div>
       <Link to="/" className="back-link">Back to Home</Link>
     </div>
