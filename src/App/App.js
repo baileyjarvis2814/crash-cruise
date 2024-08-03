@@ -8,8 +8,7 @@ import NotFound from '../NotFound/NotFound';
 function App() {
   return (
     <div className="App">
-      <Routes>
-  
+      <Routes>  
         <Route path="/" element={<HomePage />} />
         <Route path="/arcs/:arcName" element={<ArcDetails />} />
         <Route path="*" element={<NotFound />} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './NavBar.css';
 
 const NavBar = ({ onSearch }) => {
@@ -12,6 +13,10 @@ const NavBar = ({ onSearch }) => {
       <input type="text" placeholder="Search for an arc..." onChange={handleSearch} />
     </nav>
   );
+};
+
+NavBar.propTypes = {
+  onSearch: PropTypes.func.isRequired
 };
 
 export default NavBar;

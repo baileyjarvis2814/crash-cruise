@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../NavBar/NavBar';
 import ArcCard from '../ArcCard/ArcCard';
-import './Homepage.css'
+import './Homepage.css';
 
 const HomePage = () => {
   const [arcs, setArcs] = useState([]);
   const [filteredArcs, setFilteredArcs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showFavorites, setShowFavorites] = useState(false);
 
   useEffect(() => {
     fetch('/api/data')
@@ -32,7 +33,7 @@ const HomePage = () => {
   const handleSearch = (searchTerm) => {
     const lowercasedTerm = searchTerm.toLowerCase();
     const filtered = arcs.filter(arc => arc.Arc.toLowerCase().includes(lowercasedTerm));
-    setFilteredArcs(filtered);
+    setFilteredArcs(showFavorites ? filtered.filter(arc => arc.isFavorite) : filtered);
   };
 
   const handleToggleFavorite = (arcName) => {
@@ -47,7 +48,16 @@ const HomePage = () => {
       return arc;
     });
     setArcs(updatedArcs);
-    setFilteredArcs(updatedArcs);
+    setFilteredArcs(showFavorites ? updatedArcs.filter(arc => arc.isFavorite) : updatedArcs);
+  };
+
+  const handleToggleShowFavorites = () => {
+    setShowFavorites(!showFavorites);
+    if (showFavorites) {
+      setFilteredArcs(arcs);
+    } else {
+      setFilteredArcs(arcs.filter(arc => arc.isFavorite));
+    }
   };
 
   if (loading) {
@@ -63,10 +73,17 @@ const HomePage = () => {
       <NavBar onSearch={handleSearch} />
       <h2>Welcome to One Piece Crash Cruise</h2>
       <p>Search for your favorite arcs and explore the adventures!</p>
+      <button onClick={handleToggleShowFavorites}>
+        {showFavorites ? 'Show All Arcs' : 'Show Favorite Arcs'}
+      </button>
       <div className="arc-card-container">
-        {filteredArcs.map(arc => (
-          <ArcCard key={arc.Arc} arc={arc} onToggleFavorite={handleToggleFavorite} />
-        ))}
+        {filteredArcs.length > 0 ? (
+          filteredArcs.map(arc => (
+            <ArcCard key={arc.Arc} arc={arc} onToggleFavorite={handleToggleFavorite} />
+          ))
+        ) : (
+          <p>No arcs found</p>
+        )}
       </div>
     </div>
   );
