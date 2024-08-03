@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import NavBar from '../NavBar/NavBar';
 import ArcCard from '../ArcCard/ArcCard';
-import "./Homepage.css"
+import './Homepage.css'
 
 const HomePage = () => {
   const [arcs, setArcs] = useState([]);
+  const [filteredArcs, setFilteredArcs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -12,6 +14,7 @@ const HomePage = () => {
       .then(response => response.json())
       .then(data => {
         setArcs(data);
+        setFilteredArcs(data);
         setLoading(false);
       })
       .catch(error => {
@@ -20,6 +23,12 @@ const HomePage = () => {
         setLoading(false);
       });
   }, []);
+
+  const handleSearch = (searchTerm) => {
+    const lowercasedTerm = searchTerm.toLowerCase();
+    const filtered = arcs.filter(arc => arc.Arc.toLowerCase().includes(lowercasedTerm));
+    setFilteredArcs(filtered);
+  };
 
   if (loading) {
     return <p>Loading...</p>;
@@ -31,10 +40,11 @@ const HomePage = () => {
 
   return (
     <div>
+      <NavBar onSearch={handleSearch} />
       <h2>Welcome to One Piece Crash Cruise</h2>
       <p>Search for your favorite arcs and explore the adventures!</p>
       <div className="arc-card-container">
-        {arcs.map(arc => (
+        {filteredArcs.map(arc => (
           <ArcCard key={arc.Arc} arc={arc} />
         ))}
       </div>

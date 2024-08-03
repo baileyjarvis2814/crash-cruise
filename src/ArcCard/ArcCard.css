@@ -5,7 +5,8 @@
     margin: 1rem;
     text-align: center;
     transition: transform 0.2s;
-    width: 200px; /* Adjust as needed */
+    width: 12.5em;
+    height: 17em;
   }
   
   .arc-card:hover {
@@ -13,13 +14,15 @@
   }
   
   .arc-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover; /* Ensures the image is properly fitted within the dimensions */
+    width: 15em;
+    height: 10em;
+    object-fit: cover;
+    margin-left: -1.6em
   }
   
   .arc-card h3 {
     margin: 0.5rem 0;
+    font-size: 1.1em
   }
   
 .arc-card p {
