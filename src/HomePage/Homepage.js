@@ -13,8 +13,13 @@ const HomePage = () => {
     fetch('/api/data')
       .then(response => response.json())
       .then(data => {
-        setArcs(data);
-        setFilteredArcs(data);
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || {};
+        const updatedData = data.map(arc => ({
+          ...arc,
+          isFavorite: favorites[arc.Arc] || false
+        }));
+        setArcs(updatedData);
+        setFilteredArcs(updatedData);
         setLoading(false);
       })
       .catch(error => {
@@ -28,6 +33,21 @@ const HomePage = () => {
     const lowercasedTerm = searchTerm.toLowerCase();
     const filtered = arcs.filter(arc => arc.Arc.toLowerCase().includes(lowercasedTerm));
     setFilteredArcs(filtered);
+  };
+
+  const handleToggleFavorite = (arcName) => {
+    const updatedArcs = arcs.map(arc => {
+      if (arc.Arc === arcName) {
+        const isFavorite = !arc.isFavorite;
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || {};
+        favorites[arc.Arc] = isFavorite;
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        return { ...arc, isFavorite };
+      }
+      return arc;
+    });
+    setArcs(updatedArcs);
+    setFilteredArcs(updatedArcs);
   };
 
   if (loading) {
@@ -45,7 +65,7 @@ const HomePage = () => {
       <p>Search for your favorite arcs and explore the adventures!</p>
       <div className="arc-card-container">
         {filteredArcs.map(arc => (
-          <ArcCard key={arc.Arc} arc={arc} />
+          <ArcCard key={arc.Arc} arc={arc} onToggleFavorite={handleToggleFavorite} />
         ))}
       </div>
     </div>
