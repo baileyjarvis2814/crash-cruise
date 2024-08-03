@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './ArcCard.css';
 
 const ArcCard = ({ arc, onToggleFavorite }) => {
-  const [isFavorite, setIsFavorite] = useState(arc.isFavorite);
-
   const handleToggleFavorite = () => {
-    setIsFavorite(!isFavorite);
     onToggleFavorite(arc.Arc);
   };
 
@@ -24,11 +22,23 @@ const ArcCard = ({ arc, onToggleFavorite }) => {
         <p>Total Episodes: {arc.TotalEpisodes}</p>
       </Link>
       <button onClick={handleToggleFavorite}>
-        {isFavorite ? 'Unfavorite' : 'Favorite'}
+        {arc.isFavorite ? 'Unfavorite' : 'Favorite'}
       </button>
     </div>
   );
 };
 
+ArcCard.propTypes = {
+  arc: PropTypes.shape({
+    Arc: PropTypes.string.isRequired,
+    Image: PropTypes.string,
+    TotalChapters: PropTypes.number,
+    TotalEpisodes: PropTypes.number,
+    isFavorite: PropTypes.bool
+  }).isRequired,
+  onToggleFavorite: PropTypes.func.isRequired
+};
+
 export default ArcCard;
+
 

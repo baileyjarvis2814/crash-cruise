@@ -1,0 +1,25 @@
+[
+    {
+      "Arc": "Romance Dawn Arc",
+      "Image": "https://example.com/image1.png",
+      "Start onChapter": 1,
+      "TotalChapters": 7,
+      "Start onEpisode": 1,
+      "TotalEpisodes": 3,
+      "Major players": "Luffy, Zoro, Nami",
+      "Importance": "Introduction to the main characters and their motivations.",
+      "Major Spoiler Moment": "Luffy defeats Alvida."
+    },
+    {
+      "Arc": "Orange Town Arc",
+      "Image": "https://example.com/image2.png",
+      "Start onChapter": 8,
+      "TotalChapters": 14,
+      "Start onEpisode": 4,
+      "TotalEpisodes": 5,
+      "Major players": "Luffy, Zoro, Nami, Buggy",
+      "Importance": "Introduction to Buggy the Clown.",
+      "Major Spoiler Moment": "Luffy defeats Buggy."
+    }
+  ]
+  

@@ -3,5 +3,52 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  /* padding: 1rem; */
+}
+
+
+.arc-card {
+  width: 14em;
+  height: 18.5em;
+  font-size: 15px;
+}
+
+@media (min-width: 479px) and (max-width: 480px) {
+  .arc-card {
+    width: 10em;
+    height: 18.5em;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 429px) and (max-width: 580px) {
+  .arc-card {
+    width: 10em;
+    height: 18.5em;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 392px) and (max-width: 428px) {
+  .arc-card {
+    width: 10em;
+    height: 18.5em;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 591px) and (max-width: 820px) {
+  .arc-card {
+    width: 10em;
+    height: 18.5em;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1560px){
+  .arc-card {
+    width: 11em;
+    height: 18.5em;
+    font-size: 15px;
+  }
 }

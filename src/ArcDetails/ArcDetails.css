@@ -40,3 +40,21 @@
   color: #61dafb;
   text-decoration: none;
 }
+
+@media (max-width: 480px) {
+  .arc-details-image {
+    width: 30em;
+  }
+}
+
+@media (max-width: 430px) {
+  .arc-details-image {
+    width: 25em;
+  }
+}
+
+@media (max-width: 393px) {
+  .arc-details-image {
+    width: 20em;
+  }
+}
