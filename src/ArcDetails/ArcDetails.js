@@ -13,6 +13,7 @@ const ArcDetails = () => {
   useEffect(() => {
     fetch('https://onepiecearcsapi3d2y-0729a9eea5cc.herokuapp.com/api/data')
       .then(response => {
+        console.log('Response headers:', response.headers);
         console.log('Response status:', response.status);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
