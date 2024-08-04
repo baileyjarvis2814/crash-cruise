@@ -19,7 +19,7 @@ Cloning the Repo or Seeing the Deployed Application
 - Install dependencies with npm install.
 - Start the application with npm start. The page should open up in your default browser.
 - ### Option 2: Using the Deployed Link
-- Follow [this link](https://crash-cruise-j1d971w99-jarvis-projects-77e68e1c.vercel.app/) to access the deployed application. It is responsive and should work on multiple screen sizes.
+- Follow [this link](https://crash-cruise.vercel.app/) to access the deployed application. It is responsive and should work on multiple screen sizes.
 
 ## Wins
 - Completing the initial iterations for the project within the first couple of days.
