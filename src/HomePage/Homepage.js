@@ -36,6 +36,27 @@ const HomePage = () => {
       });
   }, []);
 
+  useEffect(() => {
+    console.log('Fetching manifest...');
+    fetch('https://crash-cruise-kwr8x5bk3-jarvis-projects-77e68e1c.vercel.app/manifest.json', { mode: 'cors' })
+      .then(response => {
+        console.log('Manifest Response Status:', response.status);
+        response.headers.forEach((value, key) => {
+          console.log(`Header: ${key}, Value: ${value}`);
+        });
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Manifest Data:', data);
+      })
+      .catch(error => {
+        console.error('Manifest Fetch Error:', error);
+      });
+  }, []);
+
   const handleSearch = (searchTerm) => {
     const lowercasedTerm = searchTerm.toLowerCase();
     const filtered = arcs.filter(arc => arc.Arc.toLowerCase().includes(lowercasedTerm));
