@@ -1,8 +1,9 @@
 describe('ArcDetails Component', () => {
   beforeEach(() => {
     cy.intercept('GET', 'https://onepiecearcsapi3d2y-0729a9eea5cc.herokuapp.com/api/data', { fixture: 'arcs.json' }).as('getArcs');
-    cy.visit('/arcs/romance-dawn-arc');
+    cy.visit('https://crash-cruise.vercel.app/');
     cy.wait('@getArcs');
+    cy.contains('Romance Dawn Arc').click();
   });
 
   it('renders correctly with required props', () => {
@@ -31,6 +32,6 @@ describe('ArcDetails Component', () => {
 
   it('navigates back to the home page when clicking the back link', () => {
     cy.contains('Back to Home').click();
-    cy.url().should('eq', 'http://localhost:3000/');
+    cy.url().should('eq', 'https://crash-cruise.vercel.app/');
   });
 });
