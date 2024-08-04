@@ -1,7 +1,7 @@
 describe('ArcDetails Component', () => {
   beforeEach(() => {
-    cy.intercept('GET', '/api/data', { fixture: 'arcs.json' }).as('getArcs');
-    cy.visit('http://localhost:3000/arcs/romance-dawn-arc');
+    cy.intercept('GET', 'https://onepiecearcsapi3d2y-0729a9eea5cc.herokuapp.com/api/data', { fixture: 'arcs.json' }).as('getArcs');
+    cy.visit('/arcs/romance-dawn-arc');
     cy.wait('@getArcs');
   });
 
