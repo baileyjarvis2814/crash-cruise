@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# One Piece Crash Cruise
+## Abstract
+One Piece Crash Cruise is an application that allows users to explore various arcs from the popular manga and anime series "One Piece". Users can search for specific arcs, view details such as major players, important moments, and even a major spoiler moment. The app also allows users to favorite their preferred arcs, which persist even after refreshing the page.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Contributors
+Jarvis Bailey, [GitHub Profile](https://github.com/baileyjarvis2814/crash-cruise)
 
-## Available Scripts
+Context
+This project was completed as a solo final project of Mod 3 at Turing School of Software and Design. It took roughly 40 hours to complete, from handrolling api data, to design and brainstorming to implementation and deployment.
 
-In the project directory, you can run:
+Cloning the Repo or Seeing the Deployed Application
+### Option 1: Cloning the Repo
+- Go to the following link: [One Piece Crash Cruise Repo](https://github.com/baileyjarvis2814/crash-cruise).
 
-### `npm start`
+- Click on "Fork" at the top right.
+- Click on "Code" and copy the SSH or HTTPS link.
+- In your local machine, type git clone <link> (replace <link> with the copied URL).
+- Navigate into the cloned repository with cd one_piece_crash_cruise.
+- Install dependencies with npm install.
+- Start the application with npm start. The page should open up in your default browser.
+- ### Option 2: Using the Deployed Link
+- Follow [this link](https://crash-cruise-j1d971w99-jarvis-projects-77e68e1c.vercel.app/) to access the deployed application. It is responsive and should work on multiple screen sizes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Wins
+- Completing the initial iterations for the project within the first couple of days.
+- Implementing a favoriting feature that persists data using local storage.
+- Successfully integrating routing using React Router for a multi-page application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Challenges
+- Managing responsive css layout and ensuring compatibility across different screen sizes.
+- Fetching and displaying specific arc data efficiently.
+- Overcoming CORS issues while fetching data from the API.
