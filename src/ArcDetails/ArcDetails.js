@@ -13,6 +13,7 @@ const ArcDetails = () => {
   useEffect(() => {
     fetch('https://onepiecearcsapi3d2y-0729a9eea5cc.herokuapp.com/api/data')
       .then(response => {
+        console.log('Response status:', response.status);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -31,14 +32,17 @@ const ArcDetails = () => {
   }, [arcName]);
 
   if (loading) {
+    console.log('Loading data...');
     return <p>Loading...</p>;
   }
 
   if (error) {
+    console.error('Error loading data:', error);
     return <p>Error loading data: {error.message}</p>;
   }
 
   if (!arc) {
+    console.log('Arc not found');
     return <p>Arc not found</p>;
   }
 
