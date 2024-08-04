@@ -21,12 +21,17 @@ Cloning the Repo or Seeing the Deployed Application
 - ### Option 2: Using the Deployed Link
 - Follow [this link](https://crash-cruise-j1d971w99-jarvis-projects-77e68e1c.vercel.app/) to access the deployed application. It is responsive and should work on multiple screen sizes.
 
-Wins
+## Wins
 - Completing the initial iterations for the project within the first couple of days.
 - Implementing a favoriting feature that persists data using local storage.
 - Successfully integrating routing using React Router for a multi-page application.
 
-Challenges
+## Challenges
 - Managing responsive css layout and ensuring compatibility across different screen sizes.
 - Fetching and displaying specific arc data efficiently.
 - Overcoming CORS issues while fetching data from the API.
+
+## Features to be added
+- Video files from specific popular moments in the series with context
+- Digestible character bios that don't require multiple pages of reading
+- Pre & Post timeskip sections for the user to get more specific in arc searching
