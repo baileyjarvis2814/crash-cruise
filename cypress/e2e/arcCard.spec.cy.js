@@ -1,7 +1,7 @@
 describe('ArcCard Component', () => {
   beforeEach(() => {
     cy.intercept('GET', '/api/data', { fixture: 'twoArcs.json' }).as('getArcs');
-    cy.visit('http://localhost:3000/');
+    cy.visit('https://crash-cruise-5fvu17yu0-jarvis-projects-77e68e1c.vercel.app/');
     cy.wait('@getArcs');
   });
 
