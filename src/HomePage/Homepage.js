@@ -11,8 +11,13 @@ const HomePage = () => {
   const [showFavorites, setShowFavorites] = useState(false);
 
   useEffect(() => {
-    fetch('/api/data')
-      .then(response => response.json())
+    fetch('https://onepiecearcsapi3d2y-0729a9eea5cc.herokuapp.com/api/data')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then(data => {
         const favorites = JSON.parse(localStorage.getItem('favorites')) || {};
         const updatedData = data.map(arc => ({
