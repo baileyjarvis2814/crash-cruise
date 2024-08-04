@@ -37,8 +37,12 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    console.log('Fetching manifest...');
-    fetch('https://crash-cruise-kwr8x5bk3-jarvis-projects-77e68e1c.vercel.app/manifest.json', { mode: 'cors' })
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const manifestUrl = `${baseUrl}/manifest.json`;
+  
+    console.log('Fetching manifest from:', manifestUrl);
+  
+    fetch(manifestUrl, { mode: 'cors' })
       .then(response => {
         console.log('Manifest Response Status:', response.status);
         response.headers.forEach((value, key) => {
@@ -55,7 +59,7 @@ const HomePage = () => {
       .catch(error => {
         console.error('Manifest Fetch Error:', error);
       });
-  }, []);
+  }, []);  
 
   const handleSearch = (searchTerm) => {
     const lowercasedTerm = searchTerm.toLowerCase();
